@@ -1,0 +1,12 @@
+[Unit]
+Description=Pick a random GRUB theme before shutdown/reboot
+DefaultDependencies=no
+Before=shutdown.target reboot.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/random-grub-theme
+RemainAfterExit=yes
+
+[Install]
+WantedBy=shutdown.target reboot.target
