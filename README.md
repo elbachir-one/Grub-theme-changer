@@ -1,33 +1,52 @@
-# Grub-theme-changer
-a script that picks a random theme from the `/boot/grub/themes` folder for Grub to use on boot
+# Grub Theme Changer
 
-ANY AND ALL CREDIT GOES TO https://github.com/elbachir-one FOR CREATING THE SCRIPT AND TEACHING ME HOW TO USE AND APPLY IT!
-Also thanks for helping and teaching me how to fix problems with Arch in the Arch Community Discord.
+A simple script that picks a random theme from the `/boot/grub/themes` directory
+for GRUB to use at boot.
 
+---
 
+### Credits
 
-Installation: clone the repo and copy the script using:
-`sudo cp grub_theme_changer.sh /usr/local/bin/random-grub-theme`
+**All credit** goes to [elbachir-one](https://github.com/elbachir-one) for creating the original script and teaching me how to use and apply it!
+Also, thanks to everyone in the **Arch Community Discord** for helping me learn and
+fix issues with Arch Linux.
 
-make the script executable using:
-`chmod +x grub_theme_changer.sh`
+---
 
+### Installation
 
+1. **Clone the repository** and copy the script:
+```sh
+sudo cp grub_theme_changer.sh /usr/local/bin/random-grub-theme
+```
 
-Copy the systemd service to `/etc/systemd/system/` with:
-`sudo cp random-grub-theme.service /etc/systemd/system/system/random-grub-theme.service`
+2. **Make the script executable:**
+```sh
+sudo chmod +x /usr/local/bin/random-grub-theme
+```
 
-and enable it using:
-`sudo systemctl enable random-grub-theme.service`
+3. **Copy the systemd service file:**
+```sh
+sudo cp random-grub-theme.service /etc/systemd/system/random-grub-theme.service
+```
 
+4. **Enable the service:**
+```sh
+sudo systemctl enable random-grub-theme.service
+```
 
+5. **Reboot your system.**
 
-Reboot.
+---
 
+### Verification
 
+After reboot, check the service status with:
+```sh
+systemctl status random-grub-theme.service
+```
 
-Check the status after reboot using:
-`systemctl status random-grub-theme.service`
+You should see that a random theme has been selected from the `/boot/grub/themes` folder.
+You can add as many themes as you like — no need to reinstall or modify the script.
 
-You should see a random theme picked from the `/boot/grub/themes` folder each time you boot. 
-You can add however many themes as you want to the folder, without needing to reinstall the script.
+---
